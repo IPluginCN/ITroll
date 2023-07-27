@@ -1,0 +1,162 @@
+package com.iw46;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.bukkit.Material;
+import org.bukkit.entity.Fireball;
+import org.bukkit.entity.Player;
+import org.bukkit.entity.Projectile;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.projectiles.ProjectileSource;
+import org.bukkit.util.Vector;
+
+public class MyListener implements Listener {
+  @EventHandler
+  public void playerjoin(PlayerJoinEvent event) {
+    Player p = event.getPlayer();
+    String name = p.getName();
+    event.setJoinMessage("[+]" + name + "shit can't write Chinese SHIT)");
+  }
+  
+  @EventHandler
+  public void click(InventoryClickEvent event) {
+    Inventory inv = event.getInventory();
+    if (event.getRawSlot() == 3 && event.getView().getTitle().equals(")) {
+      ItemStack it4 = new ItemStack(Material.BARRIER, 64);
+      ItemMeta meta4 = it4.getItemMeta();
+      meta4.setDisplayName(");
+      List<String> lore = new ArrayList<>();
+      lore.add("Dasb);
+      lore.add(");
+      meta4.setLore(lore);
+      it4.setItemMeta(meta4);
+      Player p = (Player)event.getWhoClicked();
+      p.getInventory().addItem(new ItemStack[] { it4 });
+      event.setCancelled(true);
+    } 
+    if (event.getRawSlot() == 2 && event.getView().getTitle().equals(")) {
+      ItemStack it = new ItemStack(Material.FLINT_AND_STEEL, 1);
+      ItemMeta meta = it.getItemMeta();
+      meta.setDisplayName(");
+      List<String> lore = new ArrayList<>();
+      lore.add(");
+      lore.add(");
+      meta.setLore(lore);
+      it.setItemMeta(meta);
+      Player p = (Player)event.getWhoClicked();
+      p.getInventory().addItem(new ItemStack[] { it });
+      event.setCancelled(true);
+    } 
+    if (event.getRawSlot() == 1 && event.getView().getTitle().equals(")) {
+      ItemStack it1 = new ItemStack(Material.TNT, 64);
+      ItemMeta meta1 = it1.getItemMeta();
+      meta1.setDisplayName(");
+      List<String> lore = new ArrayList<>();
+      lore.add(");
+      lore.add(");
+      meta1.setLore(lore);
+      it1.setItemMeta(meta1);
+      Player p = (Player)event.getWhoClicked();
+      p.getInventory().addItem(new ItemStack[] { it1 });
+      event.setCancelled(true);
+    } 
+    if (event.getRawSlot() == 0 && event.getView().getTitle().equals(")) {
+      ItemStack it1 = new ItemStack(Material.TOTEM_OF_UNDYING, 64);
+      ItemMeta meta1 = it1.getItemMeta();
+      meta1.setDisplayName(");
+      List<String> lore = new ArrayList<>();
+      lore.add(");
+      lore.add(");
+      meta1.setLore(lore);
+      it1.setItemMeta(meta1);
+      Player p = (Player)event.getWhoClicked();
+      p.getInventory().addItem(new ItemStack[] { it1 });
+      event.setCancelled(true);
+    } 
+    if (event.getRawSlot() == 4 && event.getView().getTitle().equals(")) {
+      ItemStack it1 = new ItemStack(Material.FIRE_CHARGE, 64);
+      ItemMeta meta1 = it1.getItemMeta();
+      meta1.setDisplayName("666");
+      List<String> lore = new ArrayList<>();
+      lore.add(");
+      lore.add(");
+      meta1.setLore(lore);
+      it1.setItemMeta(meta1);
+      Player p = (Player)event.getWhoClicked();
+      p.getInventory().addItem(new ItemStack[] { it1 });
+      event.setCancelled(true);
+    } 
+    if (event.getRawSlot() == 5 && event.getView().getTitle().equals(")) {
+      Player p = (Player)event.getWhoClicked();
+      p.setLevel(114514);
+      p.setMaxHealth(10000.0D);
+      event.setCancelled(true);
+    } 
+    if (event.getRawSlot() == 6 && event.getView().getTitle().equals(")) {
+      ItemStack it7 = new ItemStack(Material.MILK_BUCKET, 1);
+      ItemMeta meta7 = it7.getItemMeta();
+      meta7.setDisplayName(");
+      List<String> lore = new ArrayList<>();
+      lore.add(");
+      lore.add(");
+      meta7.setLore(lore);
+      it7.setItemMeta(meta7);
+      Player p = (Player)event.getWhoClicked();
+      p.setLevel(10);
+      p.setMaxHealth(20.0D);
+      p.getInventory().addItem(new ItemStack[] { it7 });
+      event.setCancelled(true);
+    } 
+    if (event.getRawSlot() == 7 && event.getView().getTitle().equals(")) {
+      Player p = (Player)event.getWhoClicked();
+      p.setResourcePack("https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1689930965664/666.zip");
+      event.setCancelled(true);
+    } 
+  }
+  
+  @EventHandler
+  public void a(PlayerInteractEvent event) {
+    try {
+      if (event.getAction() == Action.RIGHT_CLICK_AIR && event.getPlayer().getItemInHand().getType() == Material.BARRIER) {
+        Player p = event.getPlayer();
+        p.sendMessage(");
+        p.kickPlayer(");
+      } 
+    } catch (NullPointerException nullPointerException) {}
+  }
+  
+  @EventHandler
+  public void onRightClickFireBall(PlayerInteractEvent e) {
+    try {
+      if (e.getAction() == Action.RIGHT_CLICK_AIR && e.getPlayer().getItemInHand().getType() == Material.FIRE_CHARGE) {
+        if (!e.getPlayer().hasPermission("fireball.throw"))
+          return; 
+        Vector direction = e.getPlayer().getEyeLocation().getDirection().multiply(2);
+        Projectile projectile = (Projectile)e.getPlayer().getWorld().spawn(e.getPlayer().getEyeLocation().add(direction.getX(), direction.getY(), direction.getZ()), Fireball.class);
+        projectile.setShooter((ProjectileSource)e.getPlayer());
+        projectile.setVelocity(direction);
+        if (e.getPlayer().getItemInHand().getAmount() > 1) {
+          e.getPlayer().setItemInHand(new ItemStack(Material.FIRE_CHARGE, e.getPlayer().getItemInHand().getAmount() - 1));
+        } else {
+          e.getPlayer().setItemInHand((ItemStack)null);
+        } 
+      } 
+    } catch (NullPointerException nullPointerException) {}
+  }
+  
+  @EventHandler
+  public void a2(PlayerQuitEvent e) {
+    Player p = e.getPlayer();
+    String name = p.getName();
+    e.setQuitMessage("[-]" + name + "shit can't write Chinese SHIT)");
+  }
+}
