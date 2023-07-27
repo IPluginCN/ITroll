@@ -1,0 +1,11 @@
+name: iw46SMP2
+version: '1.0-SNAPSHOT'
+main: com.iw46.Iw46SMP2
+api-version: '1.20'
+commands:
+  it:
+    description: "测试指令"
+    permission: <plugin name>.it
+    permission-message:"没权限！去找iw46磕头吧" 
+    aliases: i
+
