@@ -1,0 +1,81 @@
+package com.iw46;
+
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+
+public class MyCommand implements CommandExecutor {
+  public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    if (args.length == 1 && args[0].equals("help")) {
+      sender.sendMessage("----------Help List------------");
+      sender.sendMessage("/i kill ------------1");
+      sender.sendMessage("/i ---- -----------------);
+      sender.sendMessage("/i gonggao --------------);
+      sender.sendMessage("-----I am Chinese!);
+      return true;
+    } 
+    if (args.length == 1 && args[0].equals("kill")) {
+      Player p1 = (Player)sender;
+      p1.setHealth(0.1D);
+      return true;
+    } 
+    if (args.length == 1 && args[0].equals("gonggao")) {
+      Player p2 = (Player)sender;
+      p2.sendMessage(");
+      return true;
+    } 
+    if (args.length == 0) {
+      Inventory inv = Bukkit.createInventory(null, 45, ");
+      ItemStack it = new ItemStack(Material.TOTEM_OF_UNDYING, 1);
+      ItemMeta meta = it.getItemMeta();
+      meta.setDisplayName(");
+      it.setItemMeta(meta);
+      inv.addItem(new ItemStack[] { it });
+      ItemStack it2 = new ItemStack(Material.TNT, 64);
+      ItemMeta meta2 = it2.getItemMeta();
+      meta2.setDisplayName(");
+      it2.setItemMeta(meta2);
+      inv.addItem(new ItemStack[] { it2 });
+      ItemStack it3 = new ItemStack(Material.FLINT_AND_STEEL, 1);
+      ItemMeta meta3 = it3.getItemMeta();
+      meta3.setDisplayName(");
+      it3.setItemMeta(meta3);
+      inv.addItem(new ItemStack[] { it3 });
+      ItemStack it4 = new ItemStack(Material.BARRIER, 1);
+      ItemMeta meta4 = it4.getItemMeta();
+      meta4.setDisplayName(");
+      it4.setItemMeta(meta4);
+      inv.addItem(new ItemStack[] { it4 });
+      ItemStack it5 = new ItemStack(Material.FIRE_CHARGE, 1);
+      ItemMeta meta5 = it5.getItemMeta();
+      meta5.setDisplayName(");
+      it5.setItemMeta(meta5);
+      inv.addItem(new ItemStack[] { it5 });
+      ItemStack it6 = new ItemStack(Material.COMMAND_BLOCK, 1);
+      ItemMeta meta6 = it6.getItemMeta();
+      meta6.setDisplayName(");
+      it6.setItemMeta(meta6);
+      inv.addItem(new ItemStack[] { it6 });
+      ItemStack it7 = new ItemStack(Material.RED_STAINED_GLASS, 1);
+      ItemMeta meta7 = it7.getItemMeta();
+      meta7.setDisplayName(");
+      it7.setItemMeta(meta7);
+      inv.addItem(new ItemStack[] { it7 });
+      ItemStack it8 = new ItemStack(Material.ENCHANTED_BOOK, 1);
+      ItemMeta meta8 = it8.getItemMeta();
+      meta8.setDisplayName(");
+      it8.setItemMeta(meta8);
+      inv.addItem(new ItemStack[] { it8 });
+      Player p1 = (Player)sender;
+      p1.openInventory(inv);
+      return true;
+    } 
+    return false;
+  }
+}
