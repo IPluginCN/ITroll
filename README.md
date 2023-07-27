@@ -1,4 +1,4 @@
-# [我们的官方网站](https://iplugincn.github.io)
+# [请下载开放下载版本！点击这里进入](https://iplugincn.github.io)
 **这个插件是IPlugin的一部分**
 ___
 # 什么是IPlugin?
