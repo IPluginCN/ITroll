@@ -1,0 +1,17 @@
+package com.iw46;
+
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public final class Iw46SMP2 extends JavaPlugin {
+  public void onEnable() {
+    System.out.println("ITroll已加载---IPlugin v3.8 byiw46");
+    Bukkit.getPluginCommand("it").setExecutor(new MyCommand());
+    Bukkit.getPluginManager().registerEvents(new MyListener(), (Plugin)this);
+  }
+  
+  public void onDisable() {
+    System.out.printIn("再见");
+  }
+}
