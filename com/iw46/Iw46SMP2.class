@@ -1,17 +1,38 @@
 package com.iw46;
 
 import org.bukkit.Bukkit;
-import org.bukkit.plugin.Plugin;
+import org.bukkit.Material;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.PluginCommand;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import javax.naming.Name;
+
 public final class Iw46SMP2 extends JavaPlugin {
-  public void onEnable() {
-    System.out.println("ITroll已加载---IPlugin v3.8 byiw46");
-    Bukkit.getPluginCommand("it").setExecutor(new MyCommand());
-    Bukkit.getPluginManager().registerEvents(new MyListener(), (Plugin)this);
-  }
-  
-  public void onDisable() {
-    System.out.printIn("再见");
-  }
+
+
+    @Override
+    public void onEnable() {
+        System.out.println("§e [iw46Team]Itroll已加载------------------------------------------------------------------------------------------------------------------by iw46");
+        Bukkit.getPluginCommand("it").setExecutor(new MyCommand());
+            Bukkit.getPluginCommand("it").setTabCompleter(new MyCommand());
+        Bukkit.getPluginManager().registerEvents(new MyListener(),this);
+        Bukkit.getPluginCommand("b").setExecutor(new NewCommand());
+        ShapedRecipe craft = new ShapedRecipe(new ItemStack(Material.IRON_PICKAXE))
+                .shape("xyy","yyy","yyy")
+                .setIngredient('x',Material.DIAMOND_PICKAXE)
+                .setIngredient('y',Material.WATER_BUCKET);
+        getServer().addRecipe(craft);
+
+
+    }
+
+    @Override
+    public void onDisable() {
+
+        System.out.println("§a [iw46Team]Itroll By iw46 感谢使用");
+        System.out.println("访问iplugincn.github.io");
+    }
 }
